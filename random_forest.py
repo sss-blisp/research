@@ -16,36 +16,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_classification
 
-"""### 関数"""
 
-# def pd_read(number):
-
-#   test = []
-#   train = []
-#   # testデータ用
-#   for i in range(2):
-#     test_df = pd.read_csv('/content/drive/My Drive/Ando/卒論/データ/post/分割_クラスタリング2/クラスタ0/test_'+str(number)+'.csv')
-#     test_df  = Preprocessing(test_df)
-#     test.append(test_df)
-#   df_test = pd.concat(test, axis=0, sort=True)
-
-
-#   # trainデータ用
-#   for i in range(31):
-#     for j in range(2):
-#       train_df = pd.read_csv('/content/drive/My Drive/Ando/卒論/データ/post/分割_クラスタリング2/クラスタ0/train_'+str(number)+'.csv')
-#       # train_df = Preprocessing(train_df)
-#       train.append(train_df)
-#   df_train = pd.concat(train, axis=0, sort=True)
-
-#   return test_df, train_df
 def pd_read(number):
 
   test = []
   train = []
   # testデータ用
   for i in range(2):
-    test_df = pd.read_csv('/content/drive/My Drive/Ando/卒論/データ/post/分割_クラスタリング平均差2/クラスタ0/' +str(number) +'/test'+str(i)+'.csv') #クラスタリング
+    test_df = pd.read_csv('/content/drive/My Drive/' +str(number) +'/test'+str(i)+'.csv') #クラスタリング
     test_df  = Preprocessing(test_df)
     test.append(test_df)
   test_df = pd.concat(test, axis=0, sort=True)
@@ -53,7 +31,7 @@ def pd_read(number):
   # trainデータ用
   # for i in range(31):
   for i in range(20):
-    train_df = pd.read_csv('/content/drive/My Drive/Ando/卒論/データ/post/分割_クラスタリング平均差2/クラスタ0/' +str(number) +'/train'+str(i)+'.csv')
+    train_df = pd.read_csv('/content/drive/My Drive/' +str(number) +'/train'+str(i)+'.csv')
 
     # train_df = Preprocessing(train_df)
     train.append(train_df)
